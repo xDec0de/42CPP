@@ -6,41 +6,30 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:35:04 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/16 16:11:09 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:57:21 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-std::string process_add(PhoneBook phonebook)
+std::string get_input(std::string name)
 {
-	std::string first_name;
-	std::cout << "Input first name:" << std::endl;
-	std::cin >> first_name;
-	std::string last_name;
-	std::cout << "Input last name:" << std::endl;
-	std::cin >> last_name;
-	std::cout << "Input nickname:" << std::endl;
-	std::string nickname;
-	std::cin >> nickname;
-	phonebook.addContact(first_name, last_name, nickname);
-	return ("ADD");
-}
-
-std::string process_cmd(std::string cmd, PhoneBook phonebook)
-{
-	if (cmd == "ADD")
-		return (process_add(phonebook));
-	return (cmd);
+	std::string input;
+	std::cout << "Input " + name + ":" << std::endl;
+	std::cin >> input;
+	return (input);
 }
 
 int main(void)
 {
 	PhoneBook phonebook;
 
-	std::string cmd;
-	std::cin >> cmd;
-	while (process_cmd(cmd, phonebook) != "EXIT")
+	std::string cmd = "";
+	while (cmd != "EXIT")
+	{
 		std::cin >> cmd;
+		if (cmd == "ADD")
+			phonebook.addContact(get_input("first name"), get_input("last name"), get_input("nickname"));
+	}
 	return 0;
 }

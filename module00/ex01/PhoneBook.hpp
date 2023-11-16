@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:55:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/16 16:03:27 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:31:40 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class PhoneBook
 {
 	private:
+		int index;
 		Contact contacts[8];
 	public:
 		PhoneBook(void);
