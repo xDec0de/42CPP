@@ -6,7 +6,7 @@
 #    By: danimart <danimart@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 11:35:40 by danimart          #+#    #+#              #
-#    Updated: 2023/11/16 11:45:32 by danimart         ###   ########.fr        #
+#    Updated: 2023/11/16 13:55:55 by danimart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ $(OBJDIR):
 	mkdir build
 
 clean:
-	make fclean -C $(LFTPATH)
 	$(RM) $(OBJDIR)
 
 fclean: clean
