@@ -6,11 +6,18 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:35:04 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/16 16:57:21 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:45:33 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+// |-------------------------------------------|
+// |Index     |First Nam.|Last Name |Nickname  |
+// |----------|----------|----------|----------|
+// |1         |Hello     |World     |Hello Wor.|
+// |2         |Test      |Test      |TestName  |
+// |-------------------------------------------|
 
 std::string get_input(std::string name)
 {
@@ -30,6 +37,8 @@ int main(void)
 		std::cin >> cmd;
 		if (cmd == "ADD")
 			phonebook.addContact(get_input("first name"), get_input("last name"), get_input("nickname"));
+		if (cmd == "SEARCH")
+			phonebook.printContacts();
 	}
 	return 0;
 }
