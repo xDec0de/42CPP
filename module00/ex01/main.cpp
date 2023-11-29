@@ -6,18 +6,11 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:35:04 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/29 11:45:33 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:57:49 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
-// |-------------------------------------------|
-// |Index     |First Nam.|Last Name |Nickname  |
-// |----------|----------|----------|----------|
-// |1         |Hello     |World     |Hello Wor.|
-// |2         |Test      |Test      |TestName  |
-// |-------------------------------------------|
 
 std::string get_input(std::string name)
 {
