@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:55:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/29 11:53:37 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:33:40 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class PhoneBook
 		~PhoneBook(void);
 		Contact addContact(std::string first_name, std::string last_name, std::string nickname);
 		void printContacts();
+		bool printContact(int index);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/29 11:45:29 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:40:48 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ void PhoneBook::printContacts()
 	std::cout << limits << std::endl;
 	std::cout << "|Index     |First Nam.|Last Name |Nickname  |" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	for (int i = 0; i < this->size; i++)
-	{
+	for (int i = 0; i < this->size; i++) {
 		Contact contact = this->contacts[i];
 		std::string info = "|" + std::to_string(i) + "         ";
 		info += "|" + right_align(contact.getFirstName(), 10);
@@ -46,6 +45,24 @@ void PhoneBook::printContacts()
 		std::cout << info << std::endl;
 	}
 	std::cout << limits << std::endl;
+}
+
+bool PhoneBook::printContact(int index)
+{
+	if (index < 0) {
+		std::cout << "Contact index must be a positive number, try again." << std::endl;
+		return false;
+	}
+	if (index > this->size)
+		std::cout << "Contact " + std::to_string(index) + " doesn't exist, max index is currently " + std::to_string(this->size) << std::endl;
+	else {
+		Contact contact = this->contacts[index];
+		std::cout << "Index: " + std::to_string(index) << std::endl;
+		std::cout << "First name: " + contact.getFirstName() << std::endl;
+		std::cout << "Last name: " + contact.getLastName() << std::endl;
+		std::cout << "Nickname: " + contact.getNickname() << std::endl;
+	}
+	return true;
 }
 
 Contact PhoneBook::addContact(std::string first_name, std::string last_name, std::string nickname)
