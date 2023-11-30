@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/30 15:40:48 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:50:54 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,12 @@ std::string PhoneBook::right_align(std::string original, int charLimit)
 	return limited;
 }
 
-void PhoneBook::printContacts()
+bool PhoneBook::printContacts()
 {
+	if (this->size == 0) {
+		std::cout << "There are currently no contacts to display, please add at least one before searching." << std::endl;
+		return false;
+	}
 	std::string limits = "|-------------------------------------------|";
 	std::cout << limits << std::endl;
 	std::cout << "|Index     |First Nam.|Last Name |Nickname  |" << std::endl;
@@ -45,6 +49,7 @@ void PhoneBook::printContacts()
 		std::cout << info << std::endl;
 	}
 	std::cout << limits << std::endl;
+	return true;
 }
 
 bool PhoneBook::printContact(int index)

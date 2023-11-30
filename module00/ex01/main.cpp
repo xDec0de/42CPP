@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:35:04 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/30 15:35:56 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:46:33 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int main(void)
 		if (cmd == "ADD")
 			phonebook.addContact(get_input("first name"), get_input("last name"), get_input("nickname"));
 		if (cmd == "SEARCH") {
-			phonebook.printContacts();
+			if (!phonebook.printContacts())
+				continue;
 			bool success = false;
 			while (!success) {
 				std::cout << "Input the index of the contact display:" << std::endl;
