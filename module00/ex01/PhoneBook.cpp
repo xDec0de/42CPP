@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/30 16:06:04 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:12:33 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ bool PhoneBook::printContact(int index)
 		std::cout << "Contact index must be a positive number, try again." << std::endl;
 		return false;
 	}
-	if (index > this->size)
-		std::cout << "Contact " + std::to_string(index) + " doesn't exist, max index is currently " + std::to_string(this->size) << std::endl;
+	if (index > this->size) {
+		std::cout << "Contact " + std::to_string(index) + " doesn't exist, max index is currently " + std::to_string(this->size) + ", try again." << std::endl;
+		return false;
+	}
 	else {
 		Contact contact = this->contacts[index];
 		std::cout << "Index: " + std::to_string(index) << std::endl;
