@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/30 15:50:54 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:06:04 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ Contact PhoneBook::addContact(std::string first_name, std::string last_name, std
 	contact.setFirstName(first_name);
 	contact.setLastName(last_name);
 	contact.setNickname(nickname);
-	if (this->index == 7)
+	if (this->index == 8)
 		this->index = 0;
 	this->contacts[this->index] = contact;
 	std::cout << "Contact added on index " << this->index << std::endl;
