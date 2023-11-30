@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:35:04 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/30 15:46:33 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:23:20 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(void)
 {
 	PhoneBook phonebook;
 	std::string cmd = "";
-	while (cmd != "EXIT") {
+	while (!std::cin.eof() && cmd != "EXIT") {
 		std::cout << "Input a command (ADD, SEARCH or EXIT):" << std::endl;
 		std::cin >> cmd;
 		if (cmd == "ADD")
