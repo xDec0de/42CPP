@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:35:36 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/16 12:50:33 by danimart         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:38:06 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ std::string get_input(int argc, char const *argv[])
 		return ("* LOUD AND UNBEARABLE FEEDBACK NOISE *");
 	std::string input = argv[1];
 	for (int i = 2; i < argc; i++)
-		input = input + ' ' + argv[i];
+		input += ' ' + argv[i];
 	return (to_megaphone(input));
 }
 
