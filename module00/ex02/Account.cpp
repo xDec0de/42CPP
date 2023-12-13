@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:42:58 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/13 15:11:51 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:27:05 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,31 @@ int			_amount;
 int			_nbDeposits;
 int			_nbWithdrawals;
 
-Account::Account(void) {
-	this->_amount = 0;
-}
-
 Account::Account(int initial_deposit) {
+	this->_accountIndex = _nbAccounts;
+	_nbAccounts++;
 	this->_amount = initial_deposit;
+	_totalAmount += initial_deposit;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
 }
 
 Account::~Account(void) {}
 
 void Account::makeDeposit(int deposit) {
-	
+	this->_amount += deposit;
+	_totalAmount += deposit;
+	this->_nbDeposits++;
+	_totalNbDeposits++;
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
-	return true;
+	if (this->_amount < withdrawal)
+		return false;
+	this->_amount -= withdrawal;
+	_totalAmount -= withdrawal;
+	this->_nbWithdrawals++;
+	_totalNbWithdrawals++;
 }
 
 int Account::checkAmount(void) const {
