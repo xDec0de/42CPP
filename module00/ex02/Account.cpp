@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:42:58 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/13 16:26:49 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:33:26 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,20 @@ void Account::makeDeposit(int deposit) {
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
-	if (this->_amount < withdrawal)
+	_displayTimestamp();
+	std::cout << "index:" + std::to_string(this->_accountIndex) + ";";
+	std::cout << "p_amount:" + std::to_string(this->_amount) + ";";
+	if (this->_amount < withdrawal) {
+		std::cout << "withdrawal:refused" << std::endl;
 		return false;
+	}
+	std::cout << "withdrawal:" + std::to_string(withdrawal) + ";";
 	this->_amount -= withdrawal;
 	Account::_totalAmount -= withdrawal;
 	this->_nbWithdrawals++;
 	Account::_totalNbWithdrawals++;
+	std::cout << "amount:" + std::to_string(this->_amount) + ";";
+	std::cout << "nb_withdrawals:" + std::to_string(this->_nbWithdrawals) << std::endl;
 	return true;
 }
 
