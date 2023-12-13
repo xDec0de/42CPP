@@ -6,12 +6,14 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:42:58 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/13 15:42:09 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:02:19 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
+#include <iomanip>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -79,5 +81,8 @@ void Account::displayAccountsInfos(void) {
 }
 
 void Account::_displayTimestamp(void) {
-	std::cout << "[timestamp :)] ";
+	// https://en.cppreference.com/w/cpp/io/manip/put_time
+	std::time_t t = std::time(nullptr);
+	std::tm tm = *std::localtime(&t);
+	std::cout << std::put_time(&tm, "[%Y%m%d_%H%M%S] ");
 }
