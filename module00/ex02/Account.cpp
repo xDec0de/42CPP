@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:42:58 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/13 16:02:19 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:12:03 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ Account::Account(int initial_deposit) {
 	std::cout << "created" << std::endl;
 }
 
-Account::~Account(void) {}
+Account::~Account(void) {
+	_displayTimestamp();
+	std::cout << "index:" + std::to_string(this->_accountIndex) + ";";
+	std::cout << "amount:" + std::to_string(this->_amount) + ";";
+	std::cout << "closed" << std::endl;
+}
 
 void Account::makeDeposit(int deposit) {
 	this->_amount += deposit;
