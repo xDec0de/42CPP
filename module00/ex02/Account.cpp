@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:42:58 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/13 16:14:45 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/13 16:20:43 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,11 @@ int Account::getNbWithdrawals(void) {
 }
 
 void Account::displayAccountsInfos(void) {
-	
+	_displayTimestamp();
+	std::cout << "accounts:" + std::to_string(Account::_nbAccounts) + ";";
+	std::cout << "total:" + std::to_string(Account::_totalAmount) + ";";
+	std::cout << "deposits:" + std::to_string(Account::_totalNbDeposits) + ";";
+	std::cout << "withdrawals:" + std::to_string(Account::_totalNbWithdrawals) << std::endl;
 }
 
 void Account::_displayTimestamp(void) {
