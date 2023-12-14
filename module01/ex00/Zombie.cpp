@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:41:57 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/14 17:11:16 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:29:27 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Zombie::Zombie(std::string name) {
 }
 
 Zombie::~Zombie(void) {
-	std::cout << name + " died.";
+	std::cout << name + " died." << std::endl;
 }
 
 void Zombie::announce(void) {
-	std::cout << name + ": BraiiiiiiinnnzzzZ...";
+	std::cout << name + ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
