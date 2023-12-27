@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:35:36 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/30 16:38:06 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/27 19:46:52 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ std::string to_megaphone(std::string str)
 	std::string upper = "";
 	int len = str.length();
 	for (int i = 0; i < len; i++)
-		if (i == 0 || str[i] != ' ' || (str[i] == ' ' && str[i - 1] != ' '))
+		if (i == 0 || str[i] != ' ' || str[i - 1] != ' ')
 			upper += toupper(str[i]);
 	return (upper);
 }
@@ -28,7 +28,7 @@ std::string get_input(int argc, char const *argv[])
 		return ("* LOUD AND UNBEARABLE FEEDBACK NOISE *");
 	std::string input = argv[1];
 	for (int i = 2; i < argc; i++)
-		input += ' ' + argv[i];
+		input.append(" ").append(argv[i]);
 	return (to_megaphone(input));
 }
 
