@@ -6,14 +6,14 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:41:57 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/27 19:04:45 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/27 19:39:22 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(const std::string name) {
+Zombie::Zombie(const std::string &name) {
 	this->name = name;
 }
 
