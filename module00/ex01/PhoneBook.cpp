@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/13 14:01:46 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/27 19:36:34 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ PhoneBook::PhoneBook(void) {
 
 PhoneBook::~PhoneBook(void) {}
 
-std::string PhoneBook::right_align(std::string original, int charLimit)
+std::string PhoneBook::right_align(const std::string &original, const int &charLimit)
 {
 	std::string limited = "";
 	int len = original.length();
@@ -73,7 +73,7 @@ bool PhoneBook::printContact(int index)
 	return true;
 }
 
-Contact PhoneBook::addContact(std::string first_name, std::string last_name, std::string nickname)
+Contact PhoneBook::addContact(const std::string &first_name, const std::string &last_name, const std::string &nickname)
 {
 	Contact contact;
 	contact.setFirstName(first_name);
