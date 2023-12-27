@@ -6,12 +6,12 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:43:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/14 17:13:57 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/27 19:04:20 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name) {
+Zombie* newZombie(const std::string name) {
 	return (new Zombie(name));
 }

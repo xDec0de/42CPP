@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/16 15:59:13 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/27 19:02:18 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ std::string Contact::getNickname(void)
 	return (this->nickname);
 }
 
-void Contact::setFirstName(std::string first_name)
+void Contact::setFirstName(const std::string first_name)
 {
 	this->first_name = first_name;
 }
 
-void Contact::setLastName(std::string last_name)
+void Contact::setLastName(const std::string last_name)
 {
 	this->last_name = last_name;
 }
 
-void Contact::setNickname(std::string nickname)
+void Contact::setNickname(const std::string nickname)
 {
 	this->nickname = nickname;
 }

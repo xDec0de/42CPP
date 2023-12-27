@@ -6,13 +6,13 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:35:04 by danimart          #+#    #+#             */
-/*   Updated: 2023/11/30 16:23:20 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/27 19:05:13 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-std::string get_input(std::string name)
+std::string get_input(const std::string name)
 {
 	std::string input;
 	std::cout << "Input " + name + ":" << std::endl;
