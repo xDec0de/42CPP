@@ -19,5 +19,5 @@ print a message with the name of the zombie. I took just a bit of liberty here a
 The real point of this exercise is to determine when the zombies should be allocated on the stack or the heap.
 
 ## Useful links
-  - [New operator](https://www.geeksforgeeks.org/new-vs-operator-new-in-cpp/)
-  - [Delete keyword](https://www.geeksforgeeks.org/delete-in-c/)
+-   [New operator](https://www.geeksforgeeks.org/new-vs-operator-new-in-cpp/)
+-   [Delete keyword](https://www.geeksforgeeks.org/delete-in-c/)
