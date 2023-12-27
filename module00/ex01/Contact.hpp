@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:48:26 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/27 19:03:08 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/27 19:25:11 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class Contact
 		std::string getFirstName(void);
 		std::string getLastName(void);
 		std::string getNickname(void);
-		void setFirstName(const std::string first_name);
-		void setLastName(const std::string last_name);
-		void setNickname(const std::string nickname);
+		void setFirstName(const std::string &first_name);
+		void setLastName(const std::string &last_name);
+		void setNickname(const std::string &nickname);
 };
 
 #endif
