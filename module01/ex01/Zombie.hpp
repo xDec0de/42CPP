@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:41:59 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/27 20:05:37 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/27 22:52:53 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 class Zombie
 {
 	private:
-		Zombie(void);
 		std::string name;
 	public:
-		explicit Zombie(const std::string &name);
+		Zombie(void);
 		~Zombie(void);
+		void setName(const std::string &name);
 		void announce(void);
 };
 
