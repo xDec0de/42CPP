@@ -1,5 +1,9 @@
 # 42CPP
 A collection of all C++ projects from 42, consisting of 10 different modules.
+<div align=center>
+<a href="https://www.codefactor.io/repository/github/xdec0de/42cpp"><img src="https://www.codefactor.io/repository/github/xdec0de/42cpp/badge" alt="CodeFactor" /> </a>
+<a href="https://app.codacy.com/gh/xDec0de/42CPP/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"> <img src="https://app.codacy.com/project/badge/Grade/8186c6267ffd4d92a41ada31319b288d" alt="Codacy" /> </a>
+</div>
 
 # General instructions
 Instructions apply for all projects and exercises unless stated otherwise on a specific exercise.
