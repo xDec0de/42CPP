@@ -1,4 +1,4 @@
-# Exercise 01: HI THIS IS BRAIN
+# Exercise 02: HI THIS IS BRAIN
 
 This is exercise is simple, we have to create three variables:
 - A string variable intialized to "HI THIS IS BRAIN"
