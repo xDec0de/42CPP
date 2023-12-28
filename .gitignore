@@ -31,11 +31,14 @@
 *.out
 *.app
 
-# Project executables
+# Module 00 executables
 megaphone
 phonebook
 gbu
+
+# Module 01 executables
 brainz
 horde
 hi
 violence
+sed
