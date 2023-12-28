@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 22:39:30 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/27 23:08:32 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:33:17 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int main(void) {
 	std::cout << "Announcing a horde of five zombies..." << std::endl;
 	for (int i = 0; i < 5; i++)
 		horde[i].announce();
-	std::cout << "Empty horde: " << zombieHorde(0, "Empty horde") << std::endl;
+	delete[] horde;
+	Zombie *emptyHorde = zombieHorde(0, "Empty horde");
+	std::cout << "Empty horde: " << emptyHorde << std::endl;
+	delete[] emptyHorde;
 	std::cout << "Negative size horde: " << zombieHorde(-42, "Empty horde") << std::endl;
 	return 0;
 }
