@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/28 18:24:32 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/28 18:37:54 by danimart         ###   ########.fr       */
+/*   Created: 2023/12/28 18:34:14 by danimart          #+#    #+#             */
+/*   Updated: 2023/12/28 18:50:08 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sed.hpp"
-#include <iostream>
+#ifndef SED_H
+# define SED_H
 
-int prog_exit(std::string msg, int code) {
-	std::cout << msg << std::endl;
-	exit(code);
-}
+# define BRED "\x1B[1;31m"
+# define RED "\x1B[0;31m"
+# define GRAY "\x1B[0;30m"
+# define RESET "\x1B[0m"
 
-int main(int argc, char const *argv[])
-{
-	(void) argv;
-	if (argc != 4)
-		prog_exit(ARGC_ERR, 1);
-	return 0;
-}
+# define ARGC_ERR BRED"Usage"GRAY": ./"RED"sed "GRAY"<"RED"file name"GRAY"> <"RED"text to replace"GRAY"> <"RED"replacement"GRAY">"RESET
+
+#endif
