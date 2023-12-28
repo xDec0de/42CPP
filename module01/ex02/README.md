@@ -14,4 +14,4 @@ The subject seems to specify the following order:
 -   The value pointed to by stringREF
 
 ## Useful links
-- [References](https://medium.com/@the_infinity/references-in-c-987e592d901c)
+-   [References](https://medium.com/@the_infinity/references-in-c-987e592d901c)

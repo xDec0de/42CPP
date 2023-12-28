@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 12:49:50 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/28 13:55:56 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:13:28 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Weapon {
 	private:
 		std::string type;
 	public:
-		Weapon(const std::string &type);
+		explicit Weapon(const std::string &type);
 		const std::string &getType();
 		void setType(const std::string &type);
 };
