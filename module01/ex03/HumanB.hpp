@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:37:52 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/28 14:44:59 by danimart         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:07:31 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanB {
 		const std::string name;
 		Weapon *weapon;
 	public:
-		explicit HumanB(const std::string name);
+		explicit HumanB(const std::string &name);
 		void attack();
 		void setWeapon(Weapon &weapon);
 		Weapon *getWeapon();
