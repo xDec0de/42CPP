@@ -17,3 +17,7 @@ tests to ensure that the program works correctly, even though this should always
 
 ## Useful links
 -   [Input/output files](https://cplusplus.com/doc/tutorial/files/)
+-   [std::getline](https://en.cppreference.com/w/cpp/string/basic_string/getline)
+-   [std::string::erase](https://cplusplus.com/reference/string/string/erase/)
+-   [std::string::insert](https://cplusplus.com/reference/string/string/insert/)
+-   [std::string::compare](https://cplusplus.com/reference/string/string/compare/)
