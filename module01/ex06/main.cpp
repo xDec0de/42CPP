@@ -6,12 +6,14 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:40:45 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 18:40:55 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/10 19:00:45 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 int main(void) {
+	Harl harl;
+	harl.complain("DEBUG");
 	return 0;
 }

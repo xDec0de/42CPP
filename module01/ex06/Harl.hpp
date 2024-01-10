@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:40:36 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 18:40:38 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/10 18:52:37 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 class Harl
 {
+	private:
+		void complain(int lvl);
 	public:
 		void debug(void);
 		void info(void);
