@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:24:32 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 15:31:54 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:38:28 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,19 @@ int prog_exit(std::string msg, int code) {
 
 int sed(std::ifstream &file, std::string &filename, const std::string &to_find, const std::string &replacement) {
 	std::ofstream copy(filename.append(".replace"), std::ofstream::out);
-	const int tf_len = to_find.length();
 	std::string content;
 	std::getline(file, content, '\0');
 	file.close();
-	int last_index = content.find(to_find, 0);
-	while (last_index != -1) {
-		content.erase(last_index, tf_len);
-		content.insert(last_index, replacement);
-		last_index = content.find(to_find, last_index + 1); // + 1 prevents infinite loop if to_find == replacement.
+	if (!to_find.compare(replacement))
+		std::cout << "Warning: The text to replace is equal to the replacement, the file will be cloned." << std::endl;
+	else {
+		const int tf_len = to_find.length();
+		int last_index = content.find(to_find, 0);
+		while (last_index != -1) {
+			content.erase(last_index, tf_len);
+			content.insert(last_index, replacement);
+			last_index = content.find(to_find, last_index + 1); // + 1 prevents infinite loop if to_find == replacement.
+		}
 	}
 	copy << content;
 	copy.close();
