@@ -1,4 +1,4 @@
-# Exercise 03: Sed is for losers
+# Exercise 04: Sed is for losers
 This time we have to create a program that takes three parameters:
 -   A file name, we will refer to this as `filename`.
 -   The string to find on the file that will be replaced, we will refer to this string as `to_find`.
