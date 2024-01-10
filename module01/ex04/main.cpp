@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:24:32 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 15:03:40 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:25:08 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,18 @@ int prog_exit(std::string msg, int code) {
 
 int sed(std::ifstream &file, std::string &filename, const std::string &to_find, const std::string &replacement) {
 	std::ofstream copy(filename.append(".replace"), std::ofstream::out);
-	(void) to_find;
-	(void) replacement;
+	const int tf_len = to_find.length();
+	std::string content;
+	std::getline(file, content, '\0');
 	file.close();
+	int last_index = content.find(to_find, 0);
+	while (last_index != -1) {
+		content.erase(last_index, tf_len);
+		content.insert(last_index, replacement);
+		last_index = content.find(to_find, last_index + 1); // + 1 prevents infinite loop if to_find == replacement.
+	}
+	copy << content;
+	copy.close();
 	return 0;
 }
 
