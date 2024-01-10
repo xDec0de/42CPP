@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:24:32 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 15:42:42 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:58:39 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,15 @@ int sed(std::ifstream &file, std::string &filename, const std::string &to_find, 
 	std::ofstream copy(filename.append(".replace"), std::ofstream::out);
 	std::string content;
 	std::getline(file, content, '\0');
+	const int tf_len = to_find.length();
 	file.close();
-	if (!to_find.compare(replacement))
-		std::cout << "Warning: The text to replace is equal to the replacement, the file will be cloned." << std::endl;
+	if (tf_len == 0)
+		std::cout << "Warning: The text to replace is empty, the content won't be modified." << std::endl;
+	else if (replacement.length() == 0)
+		std::cout << "Warning: The replacement string is empty, the content won't be modified." << std::endl;
+	else if (!to_find.compare(replacement))
+		std::cout << "Warning: The text to replace is equal to the replacement, the content won't be modified." << std::endl;
 	else {
-		const int tf_len = to_find.length();
 		int last_index = content.find(to_find, 0);
 		while (last_index != -1) {
 			content.erase(last_index, tf_len);
