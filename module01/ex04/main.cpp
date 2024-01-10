@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:24:32 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 15:38:28 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:42:42 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int sed(std::ifstream &file, std::string &filename, const std::string &to_find, 
 		while (last_index != -1) {
 			content.erase(last_index, tf_len);
 			content.insert(last_index, replacement);
-			last_index = content.find(to_find, last_index + 1); // + 1 prevents infinite loop if to_find == replacement.
+			last_index = content.find(to_find, last_index + 1);
 		}
 	}
 	copy << content;

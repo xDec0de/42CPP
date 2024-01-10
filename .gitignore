@@ -31,14 +31,15 @@
 *.out
 *.app
 
-# Module 00 executables
+# Module 00
 megaphone
 phonebook
 gbu
 
-# Module 01 executables
+# Module 01
 brainz
 horde
 hi
 violence
 sed
+*.replace
