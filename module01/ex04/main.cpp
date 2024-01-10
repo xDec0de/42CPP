@@ -6,11 +6,10 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:24:32 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 15:25:08 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:31:54 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sed.hpp"
 #include <iostream>
 #include <fstream>
 
@@ -38,10 +37,10 @@ int sed(std::ifstream &file, std::string &filename, const std::string &to_find, 
 
 int main(int argc, char const *argv[]) {
 	if (argc != 4)
-		prog_exit(ARGC_ERR, 1);
+		prog_exit("Usage: ./sed <file name> <text to replace> <replacement>", 1);
 	std::string filename = argv[1];
 	std::ifstream file(filename, std::ifstream::in);
 	if (!file.is_open())
-		prog_exit(OPEN_ERR, 2);
+		prog_exit("Error: Could not open file \"" + filename + "\", please check if the file exists.", 2);
 	return sed(file, filename, argv[2], argv[3]);
 }
