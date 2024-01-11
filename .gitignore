@@ -45,3 +45,6 @@ sed
 *.replace
 harl
 harlFilter
+
+# Module 02
+canonical
