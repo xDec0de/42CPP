@@ -4,9 +4,9 @@ On this exercise we have to create some kind of logger, this logger has a name, 
 -   INFO: Used for extensive information, helpful for tracing program execution in a production environment.
 -   WARNING: Used for potential issues on the program execution that can normally be ignored.
 -   ERROR: Used for critical issues that may require manual intervention to be fixed.
-I copied the messages provided as examples for each level by the subject even though I was allowed to change them, as I'm honestly too tired to think of cool phrases.0
+I copied the messages provided as examples for each level by the subject even though I was allowed to change them, as I'm honestly too tired to think of cool phrases.
 
-## Structure
+## Structure
 A `Harl` class must be created with the following methods.
 -   `void debug(void)`
 -   `void info(void)`
