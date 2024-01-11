@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:40:22 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 18:57:33 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:18:38 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,42 @@
 #include <iostream>
 
 void Harl::debug(void) {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+	std::cout << "[ DEBUG ]" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl << std::endl;
 	info();
 }
 
 void Harl::info(void) {
-	std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << "[ INFO ]" << std::endl;
+	std::cout << "I cannot believe adding extra bacon costs more money." << std::endl;
+	std::cout << "You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl << std::endl;
 	warning();
 }
 
 void Harl::warning(void) {
-	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;
+	std::cout << "[ WARNING ]" << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
+	std::cout << "I’ve been coming for years whereas you started working here since last month." << std::endl << std::endl;
 	error();
 }
 
 void Harl::error(void) {
-	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout << "[ ERROR ]" << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl << std::endl;
 }
 
 void Harl::complain(int lvl) {
 	switch (lvl) {
 		case 0:
-			std::cout << "[ DEBUG ]" << std::endl;
 			debug();
 			break;
 		case 1:
-			std::cout << "[ INFO ]" << std::endl;
 			info();
 			break;
 		case 2:
-			std::cout << "[ WARNING ]" << std::endl;
 			warning();
 			break;
 		case 3:
-			std::cout << "[ ERROR ]" << std::endl;
 			error();
 			break;
 		default:
