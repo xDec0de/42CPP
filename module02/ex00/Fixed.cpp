@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:39:07 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/11 16:03:24 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:21:45 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,14 @@ Fixed &Fixed::operator=(const Fixed &other) {
 
 Fixed::~Fixed(void) {
 	std::cout << "Desctuctor called" << std::endl;
+}
+
+int Fixed::getRawBits(void) const {
+	std::cout << "getRawBits member function called" << std::endl;
+	return this->value;
+}
+
+void Fixed::setRawBits(const int raw) {
+	std::cout << "setRawBits member function called" << std::endl;
+	this->value = raw;
 }

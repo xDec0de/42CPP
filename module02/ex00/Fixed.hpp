@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:39:03 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/11 15:54:32 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:21:28 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Fixed
 		Fixed(const Fixed &other);
 		Fixed& operator=(const Fixed &other);
 		~Fixed(void);
+		int getRawBits(void) const;
+		void setRawBits(const int raw);
 };
 
 #endif
