@@ -6,12 +6,18 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 15:38:10 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/11 15:40:07 by danimart         ###   ########.fr       */
+/*   Updated: 2024/01/11 16:02:19 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <iostream>
 
 int main(void) {
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+
+	c = b;
 	return 0;
 }
