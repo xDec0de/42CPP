@@ -16,7 +16,7 @@ Instructions apply for all projects and exercises unless stated otherwise on a s
 -   Anything that requires to include the `<algorithm>` header is also forbidden, except on Module 08 and 09.
 -   Memory leaks must be avoided.
 -   From Module 02 to 09, classes must be designed in the [Orthodox Canonical Form](https://www.francescmm.com/orthodox-canonical-class-form/), except when explicitely stated otherwise.
--   Any function implementation put in a header file (except for function templates) is forbidden.
+-   Any function implementation put in a header file (except for function templates) are forbidden.
 -   [Double inclusion](https://stackoverflow.com/questions/5000749/avoiding-double-inclusion-preprocessor-directive-vs-makefiles) must be avoided by using include guards.
 
 ## Code style
