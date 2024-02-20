@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:23:16 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 15:23:30 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/20 15:41:01 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int main() {
 
 	// String parameter constructor tests //
 	std::cout << "\nString parameter constructors:" << std::endl;
-	ClapTrap damage("Damage");
-	ClapTrap energy("Energy");
-	ClapTrap zero("Zero");
+	ScavTrap damage("Damage");
+	ScavTrap energy("Energy");
+	ScavTrap zero("Zero");
 
 	// Energy tests //
 	std::cout << "\nExecuting energy tests:" << std::endl;
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 50; i++)
 		energy.attack("Another ClapTrap");
 	energy.attack("FAIL");
 	energy.takeDamage(1);
