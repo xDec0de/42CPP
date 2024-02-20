@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 12:32:39 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:44:27 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void ClapTrap::attack(const std::string &target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
+	if (amount == 0)
+		std::cout << "ClapTrap " << this->name << " took zero damage, nothing changed." << std::endl;
 	if (this->health == 0)
 		std::cout << "ClapTrap " << this->name << " can't take any more damage." << std::endl;
 	else if (amount < this->health) {
@@ -71,7 +73,10 @@ void ClapTrap::takeDamage(unsigned int amount) {
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (this->health == 0 || this->energy == 0)
 		std::cout << "ClapTrap " << this->name << " can't be repaired..." << std::endl;
-	else {
+	else if (amount == 0) {
+		this->energy--;
+		std::cout << "ClapTrap " << this->name << " tried to be repaired but didn't gain any health. [Energy: " << this->energy << "]" << std::endl;
+	} else {
 		this->health += amount;
 		this->energy--;
 		std::cout << "ClapTrap " << this->name << " has been repaired and gained " << amount << " health points! (" << this->health << " total)" << std::endl;
