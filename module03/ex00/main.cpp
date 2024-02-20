@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:23:16 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 12:35:12 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:57:46 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int main() {
 	ClapTrap clapTrap("Test");
 	clapTrap.beRepaired(10);
+	clapTrap.beRepaired(1);
 	clapTrap.beRepaired(0);
 	clapTrap.takeDamage(10);
+	clapTrap.takeDamage(1);
 	clapTrap.takeDamage(0);
 	clapTrap.attack("Another ClapTrap");
 	clapTrap.takeDamage(500);
