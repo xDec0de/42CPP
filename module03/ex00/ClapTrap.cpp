@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 13:18:35 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:31:21 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ClapTrap::ClapTrap(void) {
 	std::cout << "Default consctuctor called" << std::endl;
-	this->name = nullptr;
+	this->name = "unknown";
 	this->health = 10;
 	this->energy = 10;
 	this->damage = 0;
@@ -72,7 +72,7 @@ void ClapTrap::attack(const std::string &target) {
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (amount == 0)
 		print(this->name, this->health, this->energy, "took zero damage, nothing changed.");
-	if (this->health == 0)
+	else if (this->health == 0)
 		print(this->name, this->health, this->energy, "can't take any more damage.");
 	else if (amount < this->health) {
 		this->health -= amount;
@@ -88,7 +88,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		print(this->name, this->health, this->energy, "can't be repaired...");
 	else if (amount == 0) {
 		this->energy--;
-		print(this->name, this->health, this->energy, "tried to be repaired but didn't gain any health.");
+		print(this->name, this->health, this->energy, "was repaired but didn't gain any health.");
 	} else {
 		this->health += amount;
 		this->energy--;
