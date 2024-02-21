@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:23:16 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 15:41:01 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:55:51 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ int main() {
 	// Default constructor test //
 	std::cout << "\nDefault constructor:" << std::endl;
 	ScavTrap def = ScavTrap();
-	def.attack("Another ClapTrap");
-	def.beRepaired(32);
-	def.takeDamage(32);
+
+	// Basic tests //
+	std::cout << "\nBasic tests:" << std::endl;
+	def.attack("ClapTrap");
+	def.takeDamage(58);
+	def.beRepaired(58);
+	def.guardGate();
 
 	// String parameter constructor tests //
 	std::cout << "\nString parameter constructors:" << std::endl;
@@ -27,10 +31,21 @@ int main() {
 	ScavTrap energy("Energy");
 	ScavTrap zero("Zero");
 
+	// Copy constructor tests //
+	std::cout << "\nExecuting copy constructor tests:" << std::endl;
+	ScavTrap copyCons(def);
+	copyCons.attack("NameShouldBe:unknown");
+
+	// Copy assignement operator tests //
+	std::cout << "\nExecuting copy assignement operator tests:" << std::endl;
+	ScavTrap copyOp("CopyOperator");
+	def = copyOp;
+	def.attack("NameShouldBe:CopyOperator");
+
 	// Energy tests //
 	std::cout << "\nExecuting energy tests:" << std::endl;
 	for (int i = 0; i < 50; i++)
-		energy.attack("Another ClapTrap");
+		energy.attack("ClapTrap");
 	energy.attack("FAIL");
 	energy.takeDamage(1);
 
@@ -42,6 +57,7 @@ int main() {
 	damage.attack("Should not be able to attack.");
 	damage.takeDamage(1);
 	damage.beRepaired(1);
+	damage.guardGate();
 
 	// Zero amount tests //
 	std::cout << "\nExecuting zero amount tests:" << std::endl;
