@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:49:21 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/21 20:58:52 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:09:33 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ ScavTrap::~ScavTrap(void) {
 }
 
 void ScavTrap::guardGate(void) {
-	std::cout << "ScavTrap " << this->name << " is now guarding the gate!" << std::endl;
+	if (this->health == 0)
+		std::cout << "💀 ➤ " << this->name << " isn't operative, so it can't guard the gate.";
+	else
+		std::cout << this->health << "♥ ➤ " << this->name << " is now guarding the gate!" << std::endl;
 }
