@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/21 20:02:19 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:23:32 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 
 ClapTrap::ClapTrap(void): name("unknown"), health(10), energy(10), damage(0) {
-	std::cout << "Default consctuctor called" << std::endl;
+	std::cout << "Default ClapTrap consctuctor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name): name(name), health(10), energy(10), damage(0) {
@@ -22,12 +22,12 @@ ClapTrap::ClapTrap(const std::string &name): name(name), health(10), energy(10),
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "Copy consctuctor called" << std::endl;
+	std::cout << "ClapTrap copy consctuctor called" << std::endl;
 	*this = other;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
-	std::cout << "Copy assignement operator called" << std::endl;
+	std::cout << "ClapTrap copy assignement operator called (" << name << " = " << other.name << ")" << std::endl;
 	this->name = other.name;
 	this->health = other.health;
 	this->energy = other.energy;
@@ -36,12 +36,12 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << "Desctuctor called" << std::endl;
+	std::cout << "ClapTrap desctuctor called for " << name << std::endl;
 }
 
 void print(const std::string &name, int health, int energy, const std::string msg) {
 	std::string health_str = health == 0 ? "💀" : std::to_string(health) + "♥"; 
-	std::cout << health_str << " | " << std::to_string(energy) << "⚡➤ ClapTrap " << name << " " << msg << std::endl;
+	std::cout << health_str << " | " << std::to_string(energy) << "⚡➤ " << name << " " << msg << std::endl;
 }
 
 std::string namePoints(int amount) {
