@@ -6,28 +6,41 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:49:21 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 15:40:23 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:58:52 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap(void) {
+ScavTrap::ScavTrap(void): ClapTrap() {
 	std::cout << "Default ScavTrap consctuctor called" << std::endl;
 	this->health = 100;
 	this->energy = 50;
 	this->damage = 20;
 }
 
-ScavTrap::ScavTrap(const std::string &name) {
-	std::cout << "Created a new ClapTrap named " << name << "." << std::endl;
-	this->name = name;
+ScavTrap::ScavTrap(std::string const &name): ClapTrap(name) {
+	std::cout << "Created a new ScavTrap named " << name << "." << std::endl;
 	this->health = 100;
 	this->energy = 50;
 	this->damage = 20;
 }
 
-void ScavTrap::guardGate() {
+ScavTrap::ScavTrap(const ScavTrap &other): ClapTrap(other) {
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &other) {
+	std::cout << "ScavTrap copy assignement operator called (" << name << " = " << other.name << ")" << std::endl;
+	ClapTrap::operator=(other);
+	return *this;
+}
+
+ScavTrap::~ScavTrap(void) {
+	std::cout << "ScavTrap desctuctor called for " << name << std::endl;
+}
+
+void ScavTrap::guardGate(void) {
 	std::cout << "ScavTrap " << this->name << " is now guarding the gate!" << std::endl;
 }

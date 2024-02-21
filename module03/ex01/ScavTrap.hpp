@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:49:18 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 15:25:52 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:31:47 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,21 @@
 class ScavTrap : public ClapTrap
 {
 	public:
+
+		// Constructors & destructor //
+
 		ScavTrap(void);
 		ScavTrap(const std::string &name);
-		void guardGate();
+		~ScavTrap(void);
+
+		// Copy constructor & operator //
+
+		ScavTrap(const ScavTrap &other);
+		ScavTrap& operator=(const ScavTrap &other);
+
+		// Functions //
+
+		void guardGate(void);
 };
 
 #endif
