@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:23:16 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 14:33:05 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:15:15 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int main() {
 	// Default constructor test //
 	std::cout << "\nDefault constructor:" << std::endl;
 	ClapTrap def = ClapTrap();
-	def.attack("Another ClapTrap");
+
+	// Basic tests //
+	std::cout << "\nBasic tests:" << std::endl;
+	def.attack("another ClapTrap");
 	def.beRepaired(32);
 	def.takeDamage(32);
 
@@ -27,12 +30,24 @@ int main() {
 	ClapTrap energy("Energy");
 	ClapTrap zero("Zero");
 
+	// Copy constructor tests //
+	std::cout << "\nExecuting copy constructor tests:" << std::endl;
+	ClapTrap copyCons(def);
+	copyCons.attack("NameShouldBe:unknown");
+
+	// Copy assignement operator tests //
+	std::cout << "\nExecuting copy assignement operator tests:" << std::endl;
+	ClapTrap copyOp("CopyOperator");
+	def = copyOp;
+	def.attack("NameShouldBe:CopyOperator");
+
 	// Energy tests //
 	std::cout << "\nExecuting energy tests:" << std::endl;
 	for (int i = 0; i < 10; i++)
-		energy.attack("Another ClapTrap");
+		energy.attack("ClapTrap");
 	energy.attack("FAIL");
 	energy.takeDamage(1);
+	energy.beRepaired(1);
 
 	// Lethal damage tests //
 	std::cout << "\nExecuting lethal damage tests:" << std::endl;
@@ -50,5 +65,4 @@ int main() {
 
 	// Destructors //
 	std::cout << "\nDestructors:" << std::endl;
-	return 0;
 }

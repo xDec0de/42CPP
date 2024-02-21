@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:23:16 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/21 20:55:51 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:16:33 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int main() {
 		energy.attack("ClapTrap");
 	energy.attack("FAIL");
 	energy.takeDamage(1);
+	energy.beRepaired(1);
+	energy.guardGate();
 
 	// Lethal damage tests //
 	std::cout << "\nExecuting lethal damage tests:" << std::endl;
