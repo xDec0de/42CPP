@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:23:16 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/21 21:16:33 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:19:59 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,13 @@ int main() {
 	ScavTrap copyOp("CopyOperator");
 	def = copyOp;
 	def.attack("NameShouldBe:CopyOperator");
+
+	// ClapTrap stat tests //
+	std::cout << "\nExecuting ClapTrap stats tests:" << std::endl;
+	ClapTrap clap("ClapTrap");
+	clap.attack("DamageZero");
+	clap.beRepaired(10);
+	clap.takeDamage(20);
 
 	// Energy tests //
 	std::cout << "\nExecuting energy tests:" << std::endl;
