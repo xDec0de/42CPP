@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/21 20:23:32 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:09:52 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ClapTrap::~ClapTrap(void) {
 
 void print(const std::string &name, int health, int energy, const std::string msg) {
 	std::string health_str = health == 0 ? "💀" : std::to_string(health) + "♥"; 
-	std::cout << health_str << " | " << std::to_string(energy) << "⚡➤ " << name << " " << msg << std::endl;
+	std::cout << health_str << " " << std::to_string(energy) << "⚡➤ " << name << " " << msg << std::endl;
 }
 
 std::string namePoints(int amount) {
