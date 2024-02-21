@@ -6,27 +6,19 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/20 15:26:53 by danimart         ###   ########.fr       */
+/*   Updated: 2024/02/21 20:02:19 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap(void) {
-	std::cout << "Default ClapTrap consctuctor called" << std::endl;
-	this->name = "unknown";
-	this->health = 10;
-	this->energy = 10;
-	this->damage = 0;
+ClapTrap::ClapTrap(void): name("unknown"), health(10), energy(10), damage(0) {
+	std::cout << "Default consctuctor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name) {
+ClapTrap::ClapTrap(const std::string &name): name(name), health(10), energy(10), damage(0) {
 	std::cout << "Created a new ClapTrap named " << name << "." << std::endl;
-	this->name = name;
-	this->health = 10;
-	this->energy = 10;
-	this->damage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
