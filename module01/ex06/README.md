@@ -11,4 +11,4 @@ Assuming the level passed by the user exists, the subject says that the filter m
 The subject says: "Although there are several ways to deal with Harl, one of the most effective is to SWITCH it off". So yeah, we have to use the `switch` statement.
 
 ## Useful links
--   [Switch statement](https://www.w3schools.com/cpp/cpp_switch.asp)
+- [Switch statement](https://www.w3schools.com/cpp/cpp_switch.asp)

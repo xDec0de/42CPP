@@ -6,12 +6,12 @@ This is exercise is simple, we have to create three variables:
 
 ## Program output
 The subject seems to specify the following order:
--   The memory address of string
--   The memory address held by stringPTR
--   The memory address held by stringREF
--   The value of string ("HI THIS IS BRAIN")
--   The value pointed to by stringPTR
--   The value pointed to by stringREF
+- The memory address of string
+- The memory address held by stringPTR
+- The memory address held by stringREF
+- The value of string ("HI THIS IS BRAIN")
+- The value pointed to by stringPTR
+- The value pointed to by stringREF
 
 ## Useful links
--   [References](https://medium.com/@the_infinity/references-in-c-987e592d901c)
+- [References](https://medium.com/@the_infinity/references-in-c-987e592d901c)
