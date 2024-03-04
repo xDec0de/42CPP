@@ -6,6 +6,7 @@ A collection of all C++ projects from 42, consisting of 10 different modules.
 </div>
 
 ## General instructions
+
 Instructions apply for all projects and exercises unless stated otherwise on a specific exercise.
 - Makefiles must not [relink](https://stackoverflow.com/questions/52502399/what-does-it-mean-for-a-makefile-to-relink).
 - Code must be compiled with `c++` and the flags `-Wall -Werror -Wextra -std=c++98 -pedantic`.
@@ -20,4 +21,5 @@ Instructions apply for all projects and exercises unless stated otherwise on a s
 - [Double inclusion](https://stackoverflow.com/questions/5000749/avoiding-double-inclusion-preprocessor-directive-vs-makefiles) must be avoided by using include guards.
 
 ## Code style
+
 Both CodeFactor and Codacy are used to measure the code quality of this project, one important performance issue that I had was using [regular parameters instead of const references](https://stackoverflow.com/questions/2627166/what-is-the-difference-between-a-const-reference-and-normal-parameter), that is why most of the string parameters of this project are passed as `const std::string &str` instead of just `std::string str`.
