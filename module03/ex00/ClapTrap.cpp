@@ -6,7 +6,7 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/21 21:10:41 by danimart         ###   ########.fr       */
+/*   Updated: 2024/03/04 20:29:59 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ClapTrap::~ClapTrap(void) {
 	std::cout << "Desctuctor called" << std::endl;
 }
 
-void print(const std::string &name, int health, int energy, const std::string msg) {
+void print(const std::string &name, int health, int energy, const std::string &msg) {
 	std::string health_str = health == 0 ? "💀" : std::to_string(health) + "♥"; 
 	std::cout << health_str << " " << std::to_string(energy) << "⚡➤ ClapTrap " << name << " " << msg << std::endl;
 }

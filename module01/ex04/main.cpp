@@ -6,14 +6,14 @@
 /*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:24:32 by danimart          #+#    #+#             */
-/*   Updated: 2024/01/10 15:58:39 by danimart         ###   ########.fr       */
+/*   Updated: 2024/03/04 20:31:23 by danimart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-int prog_exit(std::string msg, int code) {
+int prog_exit(const std::string &msg, int code) {
 	std::cout << msg << std::endl;
 	exit(code);
 }
