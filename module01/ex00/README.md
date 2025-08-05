@@ -1,6 +1,6 @@
 # Exercise 00: BraiiiiiiinnnzzzZ
 
-A Zombie class must be implemented, this class must have a string private
+A Zombie class must be implemented, this class must have a private string
 attribute called "name" and a member function `void announce(void)`.
 
 ## Announcing
