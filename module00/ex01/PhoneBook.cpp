@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/27 19:36:34 by danimart         ###   ########.fr       */
+/*   Updated: 2025/08/05 19:07:08 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <sstream>
 
 PhoneBook::PhoneBook(void) {
 	this->index = 0;
@@ -42,7 +43,9 @@ bool PhoneBook::printContacts()
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 	for (int i = 0; i < this->size; i++) {
 		Contact contact = this->contacts[i];
-		std::string info = "|" + std::to_string(i) + "         ";
+		std::ostringstream oss;
+		oss << i;
+		std::string info = "|" + right_align(oss.str(), 10);
 		info += "|" + right_align(contact.getFirstName(), 10);
 		info += "|" + right_align(contact.getLastName(), 10);
 		info += "|" + right_align(contact.getNickname(), 10) + "|";
@@ -60,15 +63,18 @@ bool PhoneBook::printContact(int index)
 		return false;
 	}
 	if (index > size) {
-		std::cout << "Contact " + std::to_string(index) + " doesn't exist, max index is currently " + std::to_string(size) + ", try again." << std::endl;
+		std::ostringstream oss;
+		oss << "Contact " << index << " doesn't exist, max index is currently " << size << ", try again.";
+		std::cout << oss.str() << std::endl;
 		return false;
-	}
-	else {
+	} else {
 		Contact contact = this->contacts[index];
-		std::cout << "Index: " + std::to_string(index) << std::endl;
-		std::cout << "First name: " + contact.getFirstName() << std::endl;
-		std::cout << "Last name: " + contact.getLastName() << std::endl;
-		std::cout << "Nickname: " + contact.getNickname() << std::endl;
+		std::ostringstream oss;
+		oss << "Index: " << index;
+		std::cout << oss.str() << std::endl;
+		std::cout << "First name: " << contact.getFirstName() << std::endl;
+		std::cout << "Last name: " << contact.getLastName() << std::endl;
+		std::cout << "Nickname: " << contact.getNickname() << std::endl;
 	}
 	return true;
 }
@@ -86,5 +92,5 @@ Contact PhoneBook::addContact(const std::string &first_name, const std::string &
 	this->index++;
 	if (this->size < 8)
 		this->size++;
-	return (contact);
+	return contact;
 }
