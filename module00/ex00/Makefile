@@ -6,7 +6,7 @@
 #    By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/05 18:49:40 by daniema3          #+#    #+#              #
-#    Updated: 2025/08/05 18:50:35 by daniema3         ###   ########.fr        #
+#    Updated: 2025/08/08 17:47:16 by daniema3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ OBJ_DIR = ./objs
 CC = c++
 CFLAGS =	-Wall -Werror -Wextra \
 			-std=c++98 -pedantic \
+			-MMD \
 			-fdiagnostics-color=always \
 
 SRCS =	megaphone.cpp

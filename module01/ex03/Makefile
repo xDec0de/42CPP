@@ -6,7 +6,7 @@
 #    By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/14 16:40:00 by danimart          #+#    #+#              #
-#    Updated: 2025/08/06 00:25:30 by daniema3         ###   ########.fr        #
+#    Updated: 2025/08/08 17:48:24 by daniema3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ OBJ_DIR = ./objs
 CC = c++
 CFLAGS =	-Wall -Werror -Wextra \
 			-std=c++98 -pedantic \
+			-MMD \
 			-fdiagnostics-color=always \
 
 SRCS =	HumanA.cpp \
