@@ -28,7 +28,7 @@ which is "x called", whith "x" being for example "Default constructor",
 "Copy constructor", "getRawBits member function" and so on depending on
 what we are calling.
 
-## About the copy constructor
+## About the copy constructor
 
 If you took the time to read my code you might have noticed that
 I used the copy assignement operator on the copy constructor instead of just
