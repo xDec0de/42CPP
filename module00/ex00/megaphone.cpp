@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniema3 <daniema3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 11:35:36 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/27 19:46:52 by danimart         ###   ########.fr       */
+/*   Updated: 2025/08/10 10:12:32 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-std::string to_megaphone(std::string str)
+std::string to_megaphone(const std::string &str)
 {
 	std::string upper = "";
 	int len = str.length();
