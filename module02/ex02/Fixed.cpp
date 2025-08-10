@@ -6,7 +6,7 @@
 /*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 20:31:07 by daniema3          #+#    #+#             */
-/*   Updated: 2025/08/10 20:11:54 by daniema3         ###   ########.fr       */
+/*   Updated: 2025/08/10 20:22:39 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  */
 
 Fixed::Fixed(void) : _value(0) {
-	std::cout << "Default consctuctor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &other) {
@@ -42,11 +42,11 @@ Fixed::Fixed(const float floatValue) {
  */
 
 Fixed::~Fixed(void) {
-	std::cout << "Desctuctor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 /*
- - Assignement operator
+ - Assignment operator
  */
 
 Fixed &Fixed::operator = (const Fixed &other) {
