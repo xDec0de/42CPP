@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2024/03/04 20:30:41 by danimart         ###   ########.fr       */
+/*   Updated: 2025/08/11 19:13:51 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 
 ClapTrap::ClapTrap(void): name("unknown"), health(10), energy(10), damage(0) {
-	std::cout << "Default ClapTrap consctuctor called" << std::endl;
+	std::cout << "Default consctuctor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name): name(name), health(10), energy(10), damage(0) {
@@ -22,12 +22,12 @@ ClapTrap::ClapTrap(const std::string &name): name(name), health(10), energy(10),
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "ClapTrap copy consctuctor called" << std::endl;
+	std::cout << "Copy consctuctor called" << std::endl;
 	*this = other;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
-	std::cout << "ClapTrap copy assignement operator called (" << name << " = " << other.name << ")" << std::endl;
+	std::cout << "Copy assignement operator called" << std::endl;
 	this->name = other.name;
 	this->health = other.health;
 	this->energy = other.energy;
@@ -36,54 +36,63 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 }
 
 ClapTrap::~ClapTrap(void) {
-	std::cout << "ClapTrap desctuctor called for " << name << std::endl;
+	std::cout << "Desctuctor called" << std::endl;
 }
 
-void print(const std::string &name, int health, int energy, const std::string &msg) {
-	std::string health_str = health == 0 ? "💀" : std::to_string(health) + "♥"; 
-	std::cout << health_str << " " << std::to_string(energy) << "⚡➤ " << name << " " << msg << std::endl;
+std::ostream &print(const std::string &name, int health, int energy) {
+	if (health == 0)
+		std::cout << "💀";
+	else
+		std::cout << health << "♥";
+	std::cout << " " << energy << "⚡ ➤  ClapTrap " << name << " ";
+	return std::cout;
 }
 
-std::string namePoints(int amount) {
-	return std::to_string(amount) + (amount == 1 ? " point" : " points");
+std::ostream &printPoints(int amount) {
+	std::cout << amount << (amount == 1 ? " point" : " points");
+	return std::cout;
 }
 
-std::string namePoints(const std::string &prefix, int amount) {
-	return std::to_string(amount) + " " + prefix + (amount == 1 ? " point" : " points");
+void addPoints(const std::string &prefix, int amount) {
+	std::cout << " " << prefix << (amount == 1 ? " point" : " points");
 }
 
 void ClapTrap::attack(const std::string &target) {
 	if (this->health == 0 || this->energy == 0)
-		print(this->name, this->health, this->energy, "can't attack right now.");
+		print(this->name, this->health, this->energy) << "can't attack right now." << std::endl;
 	else {
 		this->energy--;
-		print(this->name, this->health, this->energy, "attacks " + target + " causing " + namePoints(this->damage) + " of damage!");
+		print(this->name, this->health, this->energy) << "attacks " << target << " causing ";
+		printPoints(this->damage) << " of damage!" << std::endl;
 	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (amount == 0)
-		print(this->name, this->health, this->energy, "took zero damage, nothing changed.");
+		print(this->name, this->health, this->energy) << "took zero damage, nothing changed." << std::endl;
 	else if (this->health == 0)
-		print(this->name, this->health, this->energy, "can't take any more damage.");
+		print(this->name, this->health, this->energy) << "can't take any more damage." << std::endl;
 	else if (amount < this->health) {
 		this->health -= amount;
-		print(this->name, this->health, this->energy, "took " + namePoints(amount) + " of damage!");
+		print(this->name, this->health, this->energy) << "took ";
+		printPoints(amount) << " of damage!" << std::endl;
 	} else {
 		this->health = 0;
-		print(this->name, this->health, this->energy, "took " + namePoints(amount) + " of lethal damage!");
+		print(this->name, this->health, this->energy) << "took ";
+		printPoints(amount) << " of lethal damage!" << std::endl;
 	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (this->health == 0 || this->energy == 0)
-		print(this->name, this->health, this->energy, "can't be repaired...");
+		print(this->name, this->health, this->energy) << "can't be repaired..." << std::endl;
 	else if (amount == 0) {
 		this->energy--;
-		print(this->name, this->health, this->energy, "was repaired but didn't gain any health.");
+		print(this->name, this->health, this->energy) << "was repaired but didn't gain any health." << std::endl;
 	} else {
 		this->health += amount;
 		this->energy--;
-		print(this->name, this->health, this->energy, "has been repaired and gained " + namePoints("health", amount));
+		print(this->name, this->health, this->energy) << "has been repaired and gained ";
+		printPoints(amount) << " of health" << std::endl;
 	}
 }
