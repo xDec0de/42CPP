@@ -6,7 +6,7 @@
 /*   By: daniema3 <daniema3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:55:46 by danimart          #+#    #+#             */
-/*   Updated: 2025/08/11 12:24:29 by daniema3         ###   ########.fr       */
+/*   Updated: 2025/08/11 13:45:49 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class PhoneBook
 {
 	private:
-		int			index;
-		int			size;
-		Contact		contacts[8];
-		std::string limit(const std::string &original, const int &charLimit);
+		int			m_index;
+		int			m_size;
+		Contact		m_contacts[8];
+		std::string	limit(const std::string &original, const int &charLimit);
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);

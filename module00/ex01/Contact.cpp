@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniema3 <daniema3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/27 19:25:17 by danimart         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:50:44 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,30 @@ Contact::~Contact(void) {}
 
 std::string Contact::getFirstName(void)
 {
-	return (this->first_name);
+	return (m_firstName);
 }
 
 std::string Contact::getLastName(void)
 {
-	return (this->last_name);
+	return (m_lastName);
 }
 
 std::string Contact::getNickname(void)
 {
-	return (this->nickname);
+	return (m_nickname);
 }
 
-void Contact::setFirstName(const std::string &first_name)
+void Contact::setFirstName(const std::string &firstName)
 {
-	this->first_name = first_name;
+	m_firstName = firstName;
 }
 
-void Contact::setLastName(const std::string &last_name)
+void Contact::setLastName(const std::string &lastName)
 {
-	this->last_name = last_name;
+	m_lastName = lastName;
 }
 
 void Contact::setNickname(const std::string &nickname)
 {
-	this->nickname = nickname;
+	m_nickname = nickname;
 }

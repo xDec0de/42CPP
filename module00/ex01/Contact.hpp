@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniema3 <daniema3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:48:26 by danimart          #+#    #+#             */
-/*   Updated: 2023/12/27 19:25:11 by danimart         ###   ########.fr       */
+/*   Updated: 2025/08/11 12:49:32 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 class Contact
 {
 	private:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
+		std::string	m_firstName;
+		std::string	m_lastName;
+		std::string	m_nickname;
 	public:
 		Contact(void);
 		~Contact(void);
-		std::string getFirstName(void);
-		std::string getLastName(void);
-		std::string getNickname(void);
-		void setFirstName(const std::string &first_name);
-		void setLastName(const std::string &last_name);
-		void setNickname(const std::string &nickname);
+		std::string	getFirstName(void);
+		std::string	getLastName(void);
+		std::string	getNickname(void);
+		void		setFirstName(const std::string &firstName);
+		void		setLastName(const std::string &lastName);
+		void		setNickname(const std::string &nickname);
 };
 
 #endif
