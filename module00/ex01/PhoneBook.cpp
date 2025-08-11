@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: daniema3 <daniema3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:13:46 by danimart          #+#    #+#             */
-/*   Updated: 2025/08/05 19:07:08 by daniema3         ###   ########.fr       */
+/*   Updated: 2025/08/11 11:51:17 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ PhoneBook::PhoneBook(void) {
 
 PhoneBook::~PhoneBook(void) {}
 
-std::string PhoneBook::right_align(const std::string &original, const int &charLimit)
+std::string PhoneBook::limit(const std::string &original, const int &charLimit)
 {
 	std::string limited = "";
 	int len = original.length();
@@ -37,21 +37,17 @@ bool PhoneBook::printContacts()
 		std::cout << "There are currently no contacts to display, please add at least one before searching." << std::endl;
 		return false;
 	}
-	std::string limits = "|-------------------------------------------|";
-	std::cout << limits << std::endl;
+	std::cout << "|-------------------------------------------|" << std::endl;
 	std::cout << "|Index     |First Nam.|Last Name |Nickname  |" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 	for (int i = 0; i < this->size; i++) {
 		Contact contact = this->contacts[i];
-		std::ostringstream oss;
-		oss << i;
-		std::string info = "|" + right_align(oss.str(), 10);
-		info += "|" + right_align(contact.getFirstName(), 10);
-		info += "|" + right_align(contact.getLastName(), 10);
-		info += "|" + right_align(contact.getNickname(), 10) + "|";
-		std::cout << info << std::endl;
+		std::cout << "|" << i << "         ";
+		std::cout << "|" << limit(contact.getFirstName(), 10);
+		std::cout << "|" << limit(contact.getLastName(), 10);
+		std::cout << "|" << limit(contact.getNickname(), 10) << "|" << std::endl;
 	}
-	std::cout << limits << std::endl;
+	std::cout << "|-------------------------------------------|" << std::endl;
 	return true;
 }
 
@@ -63,15 +59,11 @@ bool PhoneBook::printContact(int index)
 		return false;
 	}
 	if (index > size) {
-		std::ostringstream oss;
-		oss << "Contact " << index << " doesn't exist, max index is currently " << size << ", try again.";
-		std::cout << oss.str() << std::endl;
+		std::cout << "Contact " << index << " doesn't exist, max index is currently " << size << ", try again.";
 		return false;
 	} else {
 		Contact contact = this->contacts[index];
-		std::ostringstream oss;
-		oss << "Index: " << index;
-		std::cout << oss.str() << std::endl;
+		std::cout << "Index: " << index << std::endl;
 		std::cout << "First name: " << contact.getFirstName() << std::endl;
 		std::cout << "Last name: " << contact.getLastName() << std::endl;
 		std::cout << "Nickname: " << contact.getNickname() << std::endl;
