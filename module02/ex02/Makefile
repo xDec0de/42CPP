@@ -6,11 +6,11 @@
 #    By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/09 20:32:00 by daniema3          #+#    #+#              #
-#    Updated: 2025/08/09 21:53:07 by daniema3         ###   ########.fr        #
+#    Updated: 2025/08/12 16:57:52 by daniema3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = conversion
+NAME = operators
 
 SRC_DIR = .
 OBJ_DIR = ./objs
