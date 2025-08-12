@@ -6,7 +6,7 @@
 /*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 20:31:07 by daniema3          #+#    #+#             */
-/*   Updated: 2025/08/12 16:55:46 by daniema3         ###   ########.fr       */
+/*   Updated: 2025/08/12 17:10:19 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Fixed::~Fixed(void) {
  */
 
 Fixed &Fixed::operator = (const Fixed &other) {
-	std::cout << "Copy assignement operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = other._value;
 	return *this;
 }
@@ -166,4 +166,28 @@ int Fixed::toInt(void) const {
 
 float Fixed::toFloat(void) const {
 	return ((float) _value) / (1 << _bits);
+}
+
+/*
+ - Max
+ */
+
+Fixed& Fixed::max(Fixed &a, Fixed &b) {
+	return (a > b) ? a : b;
+}
+
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b) {
+	return (a > b) ? a : b;
+}
+
+/*
+ - Min
+ */
+
+Fixed& Fixed::min(Fixed &a, Fixed &b) {
+	return (a < b) ? a : b;
+}
+
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b) {
+	return (a < b) ? a : b;
 }
