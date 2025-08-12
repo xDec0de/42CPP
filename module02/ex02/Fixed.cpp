@@ -6,7 +6,7 @@
 /*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 20:31:07 by daniema3          #+#    #+#             */
-/*   Updated: 2025/08/10 20:22:39 by daniema3         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:55:46 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,56 @@ bool Fixed::operator == (const Fixed &other) const {
 
 bool Fixed::operator != (const Fixed &other) const {
 	return this->toFloat() != other.toFloat();
+}
+
+/*
+ - Arithmetic operators
+ */
+
+Fixed Fixed::operator + (const Fixed &other) const {
+	return Fixed(this->toFloat() + other.toFloat());
+}
+
+Fixed Fixed::operator - (const Fixed &other) const {
+	return Fixed(this->toFloat() - other.toFloat());
+}
+
+Fixed Fixed::operator * (const Fixed &other) const {
+	return Fixed(this->toFloat() * other.toFloat());
+}
+
+Fixed Fixed::operator / (const Fixed &other) const {
+	return Fixed(this->toFloat() / other.toFloat());
+}
+
+/*
+ - Increment operators
+ */
+
+Fixed &Fixed::operator ++ () {
+	this->_value++;
+	return *this;
+}
+
+Fixed Fixed::operator ++ (int) {
+	Fixed pre(*this);
+	this->_value++;
+	return pre;
+}
+
+/*
+ - Decrement operators
+ */
+
+Fixed &Fixed::operator -- () {
+	this->_value--;
+	return *this;
+}
+
+Fixed Fixed::operator -- (int) {
+	Fixed pre(*this);
+	this->_value--;
+	return pre;
 }
 
 /*
