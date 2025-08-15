@@ -6,7 +6,7 @@
 /*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2025/08/11 19:13:51 by daniema3         ###   ########.fr       */
+/*   Updated: 2025/08/15 17:31:02 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ ClapTrap::~ClapTrap(void) {
 	std::cout << "Desctuctor called" << std::endl;
 }
 
-std::ostream &print(const std::string &name, int health, int energy) {
-	if (health == 0)
+std::ostream &ClapTrap::prefix(void) {
+	if (this->health == 0)
 		std::cout << "💀";
 	else
-		std::cout << health << "♥";
-	std::cout << " " << energy << "⚡ ➤  ClapTrap " << name << " ";
+		std::cout << this->health << "♥";
+	std::cout << " " << this->energy << "⚡➤ ClapTrap " << name << " ";
 	return std::cout;
 }
 
@@ -59,40 +59,40 @@ void addPoints(const std::string &prefix, int amount) {
 
 void ClapTrap::attack(const std::string &target) {
 	if (this->health == 0 || this->energy == 0)
-		print(this->name, this->health, this->energy) << "can't attack right now." << std::endl;
+		prefix() << "can't attack right now." << std::endl;
 	else {
 		this->energy--;
-		print(this->name, this->health, this->energy) << "attacks " << target << " causing ";
+		prefix() << "attacks " << target << " causing ";
 		printPoints(this->damage) << " of damage!" << std::endl;
 	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (amount == 0)
-		print(this->name, this->health, this->energy) << "took zero damage, nothing changed." << std::endl;
+		prefix() << "took zero damage, nothing changed." << std::endl;
 	else if (this->health == 0)
-		print(this->name, this->health, this->energy) << "can't take any more damage." << std::endl;
+		prefix() << "can't take any more damage." << std::endl;
 	else if (amount < this->health) {
 		this->health -= amount;
-		print(this->name, this->health, this->energy) << "took ";
+		prefix() << "took ";
 		printPoints(amount) << " of damage!" << std::endl;
 	} else {
 		this->health = 0;
-		print(this->name, this->health, this->energy) << "took ";
+		prefix() << "took ";
 		printPoints(amount) << " of lethal damage!" << std::endl;
 	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (this->health == 0 || this->energy == 0)
-		print(this->name, this->health, this->energy) << "can't be repaired..." << std::endl;
+		prefix() << "can't be repaired..." << std::endl;
 	else if (amount == 0) {
 		this->energy--;
-		print(this->name, this->health, this->energy) << "was repaired but didn't gain any health." << std::endl;
+		prefix() << "was repaired but didn't gain any health." << std::endl;
 	} else {
 		this->health += amount;
 		this->energy--;
-		print(this->name, this->health, this->energy) << "has been repaired and gained ";
+		prefix() << "has been repaired and gained ";
 		printPoints(amount) << " of health" << std::endl;
 	}
 }
