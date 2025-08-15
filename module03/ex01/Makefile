@@ -6,7 +6,7 @@
 #    By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/11 15:38:17 by danimart          #+#    #+#              #
-#    Updated: 2025/08/11 19:19:16 by daniema3         ###   ########.fr        #
+#    Updated: 2025/08/15 18:09:36 by daniema3         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,10 @@ SRC_DIR = .
 OBJ_DIR = ./objs
 
 CC = c++
-CFLAGS =	-Wall -Werror -Wextra \
+CFLAGS =	-Wall -Werror -Wextra -Wshadow \
 			-std=c++98 -pedantic \
 			-MMD \
-			-fdiagnostics-color=always \
+			-fdiagnostics-color=always
 
 SRCS =	ClapTrap.cpp \
 		ScavTrap.cpp \
