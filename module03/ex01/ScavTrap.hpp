@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:49:18 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/21 20:31:47 by danimart         ###   ########.fr       */
+/*   Updated: 2025/08/15 17:45:16 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ class ScavTrap : public ClapTrap
 		// Functions //
 
 		void guardGate(void);
+	protected:
+		virtual std::ostream &prefix(void);
 };
 
 #endif

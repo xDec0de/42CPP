@@ -6,7 +6,7 @@
 /*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:39 by danimart          #+#    #+#             */
-/*   Updated: 2025/08/15 17:38:45 by daniema3         ###   ########.fr       */
+/*   Updated: 2025/08/15 17:49:47 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ClapTrap
 		unsigned int health;
 		unsigned int energy;
 		unsigned int damage;
-		std::ostream &prefix(void);
+		virtual std::ostream &prefix(void);
 	public:
 		ClapTrap(void);
 		ClapTrap(const std::string &target);

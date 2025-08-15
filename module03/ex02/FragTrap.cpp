@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danimart <danimart@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:49:21 by danimart          #+#    #+#             */
-/*   Updated: 2024/02/21 21:29:54 by danimart         ###   ########.fr       */
+/*   Updated: 2025/08/15 17:58:21 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,18 @@ FragTrap::~FragTrap(void) {
 	std::cout << "FragTrap desctuctor called for " << name << std::endl;
 }
 
+std::ostream &FragTrap::prefix(void) {
+	if (this->health == 0)
+		std::cout << "💀";
+	else
+		std::cout << this->health << "♥";
+	std::cout << " " << this->energy << "⚡➤ FragTrap " << name << " ";
+	return std::cout;
+}
+
 void FragTrap::highFivesGuys(void) {
 	if (this->health == 0)
-		std::cout << "💀 ➤ " << this->name << " isn't operative, so it can't high five." << std::endl;
+		prefix() << "isn't operative, so it can't ask for a high five :(" << std::endl;
 	else
-		std::cout << this->health << "♥ ➤ " << this->name << " high fives to everyone!" << std::endl;
+		prefix() << "is asking for a high five!" << std::endl;
 }
