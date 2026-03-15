@@ -13,6 +13,7 @@
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 
+#include <ostream>
 #include <string>
 
 class ClapTrap
@@ -23,10 +24,10 @@ class ClapTrap
 		unsigned int energy;
 		unsigned int damage;
 	protected:
-		virtual std::ostream &prefix(void);
+		std::ostream &prefix(void);
 	public:
 		ClapTrap(void);
-		ClapTrap(const std::string &target);
+		ClapTrap(const std::string &name);
 		ClapTrap(const ClapTrap &other);
 		ClapTrap& operator=(const ClapTrap &other);
 		~ClapTrap(void);

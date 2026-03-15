@@ -6,7 +6,7 @@
 /*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:47 by danimart          #+#    #+#             */
-/*   Updated: 2025/08/15 17:31:02 by daniema3         ###   ########.fr       */
+/*   Updated: 2026/03/15 16:44:24 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ ClapTrap::ClapTrap(void): name("unknown"), health(10), energy(10), damage(0) {
 	std::cout << "Default consctuctor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name): name(name), health(10), energy(10), damage(0) {
-	std::cout << "Created a new ClapTrap named " << name << "." << std::endl;
+ClapTrap::ClapTrap(const std::string &n): name(n), health(10), energy(10), damage(0) {
+	std::cout << "Created a new ClapTrap named " << n << "." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
@@ -51,10 +51,6 @@ std::ostream &ClapTrap::prefix(void) {
 std::ostream &printPoints(int amount) {
 	std::cout << amount << (amount == 1 ? " point" : " points");
 	return std::cout;
-}
-
-void addPoints(const std::string &prefix, int amount) {
-	std::cout << " " << prefix << (amount == 1 ? " point" : " points");
 }
 
 void ClapTrap::attack(const std::string &target) {

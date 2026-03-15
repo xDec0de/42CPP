@@ -20,8 +20,8 @@ ScavTrap::ScavTrap(void): ClapTrap() {
 	this->damage = 20;
 }
 
-ScavTrap::ScavTrap(std::string const &name): ClapTrap(name) {
-	std::cout << "Created a new ScavTrap named " << name << "." << std::endl;
+ScavTrap::ScavTrap(std::string const &n): ClapTrap(n) {
+	std::cout << "Created a new ScavTrap named " << n << "." << std::endl;
 	this->health = 100;
 	this->energy = 50;
 	this->damage = 20;

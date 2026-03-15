@@ -6,13 +6,14 @@
 /*   By: daniema3 <daniema3@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:17:39 by danimart          #+#    #+#             */
-/*   Updated: 2025/08/15 17:49:47 by daniema3         ###   ########.fr       */
+/*   Updated: 2026/03/15 16:44:07 by daniema3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 
+#include <ostream>
 #include <string>
 
 class ClapTrap
@@ -25,7 +26,7 @@ class ClapTrap
 		virtual std::ostream &prefix(void);
 	public:
 		ClapTrap(void);
-		ClapTrap(const std::string &target);
+		ClapTrap(const std::string &name);
 		ClapTrap(const ClapTrap &other);
 		ClapTrap& operator=(const ClapTrap &other);
 		~ClapTrap(void);

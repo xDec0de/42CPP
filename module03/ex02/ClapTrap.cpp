@@ -17,8 +17,8 @@ ClapTrap::ClapTrap(void): name("unknown"), health(10), energy(10), damage(0) {
 	std::cout << "Default consctuctor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name): name(name), health(10), energy(10), damage(0) {
-	std::cout << "Created a new ClapTrap named " << name << "." << std::endl;
+ClapTrap::ClapTrap(const std::string &n): name(n), health(10), energy(10), damage(0) {
+	std::cout << "Created a new ClapTrap named " << n << "." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {

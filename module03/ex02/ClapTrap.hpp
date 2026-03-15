@@ -13,6 +13,7 @@
 #ifndef CLAPTRAP_H
 # define CLAPTRAP_H
 
+#include <ostream>
 #include <string>
 
 class ClapTrap
@@ -25,7 +26,7 @@ class ClapTrap
 		virtual std::ostream &prefix(void);
 	public:
 		ClapTrap(void);
-		ClapTrap(const std::string &target);
+		ClapTrap(const std::string &name);
 		ClapTrap(const ClapTrap &other);
 		ClapTrap& operator=(const ClapTrap &other);
 		~ClapTrap(void);

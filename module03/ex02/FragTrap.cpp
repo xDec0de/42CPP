@@ -20,8 +20,8 @@ FragTrap::FragTrap(void): ClapTrap() {
 	this->damage = 30;
 }
 
-FragTrap::FragTrap(std::string const &name): ClapTrap(name) {
-	std::cout << "Created a new FragTrap named " << name << "." << std::endl;
+FragTrap::FragTrap(std::string const &n): ClapTrap(n) {
+	std::cout << "Created a new FragTrap named " << n << "." << std::endl;
 	this->health = 100;
 	this->energy = 100;
 	this->damage = 30;
