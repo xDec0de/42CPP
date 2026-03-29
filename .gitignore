@@ -34,28 +34,36 @@
 *.out
 *.app
 
+# Subjects
+*.pdf
+
 # Module 00
-megaphone
-phonebook
-gbu
+module00/ex00/megaphone
+module00/ex01/phonebook
+module00/ex02/gbu
 
 # Module 01
-brainz
-horde
-hi
-violence
-sed
-*.replace
-harl
-harlFilter
+module01/ex00/brainz
+module01/ex01/horde
+module01/ex02/hi
+module01/ex03/violence
+module01/ex04/sed
+module01/ex04/*.replace
+module01/ex05/harl
+module01/ex06/harlFilter
 
 # Module 02
-canonical
-conversion
-operators
+module02/ex00/canonical
+module02/ex01/conversion
+module02/ex02/operators
 
 # Module 03
-claptrap
-scavtrap
-fragtrap
-diamondtrap
+module03/ex00/claptrap
+module03/ex01/scavtrap
+module03/ex02/fragtrap
+module03/ex03/diamondtrap
+
+# Module 04
+module04/ex00/polymorphism
+module04/ex01/brain
+module04/ex02/abstract
